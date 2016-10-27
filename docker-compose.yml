@@ -1,0 +1,13 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "5432:5432"
+    volumes:
+      - /postgres/:/postgres/
+    environment:
+      - POSTGRES_USER=dev
+      - POSTGRES_PASSWORD=openaccess
+      - POSTGRES_DB=dev
+      - PGDATA=/postgres/
